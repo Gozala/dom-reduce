@@ -22,11 +22,11 @@
     "reducers": "~0.x.0"
   },
   "devDependencies": {
-    "test": ">=0.4.4",
-    "repl-utils": ">=1.0.0"
+    "test": "~0.5.0",
+    "phantomify": "~0.x.0"
   },
   "scripts": {
-    "test": "node test/test-all.js",
+    "test": "node ./node_modules/phantomify/bin/cmd.js ./test/index.js",
     "repl": "node node_modules/repl-utils"
   },
   "licenses": [
