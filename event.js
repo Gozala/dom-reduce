@@ -4,11 +4,8 @@
 
 "use strict";
 
-var channel = require("reducers/channel")
-var emit = require("reducers/emit")
-var convert = require("reducers/convert")
-var accumulated = require("reducers/accumulated")
-var end = require("reducers/end")
+var reducible = require("reducers/reducible")
+var isReduced = require("reducers/is-reduced")
 
 function open(target, type, options) {
   /**
@@ -17,22 +14,21 @@ function open(target, type, options) {
 
   ## Example
 
-      var allClicks = open(document.documentElement, 'click')
+      var allClicks = open(document.documentElement, "click")
       var clicksOnMyTarget = filter(allClicks, function (click) {
         return click.target === myTarget
       })
   **/
   var capture = options && options.capture || false
-  return convert({}, function(self, next, state) {
+  return reducible(function(next, result) {
     function handler(event) {
-      state = next(event, state)
+      result = next(event, result)
       //  When channel is marked as accumulated, remove event listener.
-      if (state && state.is === accumulated) {
+      if (isReduced(result)) {
         if (target.removeEventListener)
           target.removeEventListener(type, handler, capture)
         else
           target.detachEvent(type, handler, capture)
-        next(end(), state.value)
       }
     }
     if (target.addEventListener) target.addEventListener(type, handler, capture)
