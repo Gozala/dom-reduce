@@ -19,7 +19,7 @@
     "url": "http://github.com/Gozala/dom-reduce/issues/"
   },
   "dependencies": {
-    "reducers": "~0.x.0"
+    "reducers": "git://github.com/Gozala/reducers.git#experiment/future"
   },
   "devDependencies": {
     "test": "~0.5.0",
