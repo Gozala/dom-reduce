@@ -1,9 +1,13 @@
 {
   "name": "dom-reduce",
   "id": "dom-reduce",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Reducible DOM APIs",
-  "keywords": [ "dom", "reduce", "reducers" ],
+  "keywords": [
+    "dom",
+    "reduce",
+    "reducers"
+  ],
   "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
   "homepage": "https://github.com/Gozala/dom-reduce",
   "repository": {
@@ -15,18 +19,21 @@
     "url": "http://github.com/Gozala/dom-reduce/issues/"
   },
   "dependencies": {
-    "reducers": ">=0.1.0"
+    "reducers": "~1.0.0"
   },
   "devDependencies": {
-    "test": ">=0.4.4",
-    "repl-utils": ">=1.0.0"
+    "test": "~0.5.0",
+    "phantomify": "~0.x.0"
   },
+  "main": "./index.js",
   "scripts": {
-    "test": "node test/test-all.js",
+    "test": "node ./node_modules/phantomify/bin/cmd.js ./test/index.js",
     "repl": "node node_modules/repl-utils"
   },
-  "licenses": [{
-    "type" : "MIT",
-    "url" : "https://github.com/Gozala/dom-reduce/License.md"
-  }]
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Gozala/dom-reduce/License.md"
+    }
+  ]
 }
