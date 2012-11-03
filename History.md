@@ -1,6 +1,6 @@
 # Changes
 
-## 0.0.2 / 2012-11-01
+## 0.1.0 / 2012-11-02
 
   - Write introduction
   - Hook with a test infrastructure

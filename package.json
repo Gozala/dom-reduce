@@ -1,7 +1,7 @@
 {
   "name": "dom-reduce",
   "id": "dom-reduce",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Reducible DOM APIs",
   "keywords": [
     "dom",
@@ -19,7 +19,7 @@
     "url": "http://github.com/Gozala/dom-reduce/issues/"
   },
   "dependencies": {
-    "reducers": "git://github.com/Gozala/reducers.git#experiment/future"
+    "reducers": "~1.0.0"
   },
   "devDependencies": {
     "test": "~0.5.0",
