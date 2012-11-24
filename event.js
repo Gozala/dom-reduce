@@ -4,8 +4,8 @@
 
 "use strict";
 
-var reducible = require("reducers/reducible")
-var isReduced = require("reducers/is-reduced")
+var reducible = require("reducible/reducible")
+var isReduced = require("reducible/is-reduced")
 
 function open(target, type, options) {
   /**
@@ -20,7 +20,7 @@ function open(target, type, options) {
       })
   **/
   var capture = options && options.capture || false
-  return reducible(function(next, result) {
+  return reducible(function reducDomEvents(next, result) {
     function handler(event) {
       result = next(event, result)
       //  When channel is marked as accumulated, remove event listener.

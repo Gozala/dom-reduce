@@ -2,8 +2,8 @@
 "use strict";
 
 var open = require("../event")
-var reduced = require("reducers/reduced")
-var reduce = require("reducers/reduce")
+var reduced = require("reducible/reduced")
+var fold = require("reducers/fold")
 var filter = require("reducers/filter")
 var into = require("reducers/into")
 
@@ -21,7 +21,7 @@ exports["test the dom events are reduced"] = function(assert) {
 
   var clicks = open(element, "click")
   var count = 0
-  var result = reduce(clicks, function(state, event) {
+  var result = fold(clicks, function(event, state) {
     assert.equal(event.target, element, "event target is element")
     count = count + 1
   }, 0)
@@ -40,7 +40,7 @@ exports["test listeners removal"] = function(assert) {
 
   var clicks = open(element, "click")
   var count = 0
-  var result = reduce(clicks, function(state, event) {
+  var result = fold(clicks, function(event, state) {
     count = count + 1
     assert.equal(event.target, element, "event target is element")
     return reduced("stop!")
@@ -64,13 +64,13 @@ exports["test multiple reducers"] = function(assert) {
   var clicks = open(element, "click")
   var profile = []
 
-  var r1 = reduce(clicks, function(state, event) {
+  var r1 = fold(clicks, function(event, state) {
     profile.push(1)
     assert.equal(event.target, element, "event target is element #1")
     if (profile.length === 3) return reduced("stop!")
   }, 0)
 
-  var r2 = reduce(clicks, function(state, event) {
+  var r2 = fold(clicks, function(event, state) {
     profile.push(2)
     assert.equal(event.target, element, "event target is element #2")
   })

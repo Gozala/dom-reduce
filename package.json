@@ -19,16 +19,18 @@
     "url": "http://github.com/Gozala/dom-reduce/issues/"
   },
   "dependencies": {
-    "reducers": "~1.0.0"
+    "reducible": "~1.0.1"
   },
   "devDependencies": {
     "test": "~0.5.0",
-    "phantomify": "~0.x.0"
+    "phantomify": "~0.x.0",
+    "reducers": "~2.0.0"
   },
   "main": "./index.js",
   "scripts": {
     "test": "node ./node_modules/phantomify/bin/cmd.js ./test/index.js",
-    "repl": "node node_modules/repl-utils"
+    "repl": "node node_modules/repl-utils",
+    "postinstall": "npm dedup"
   },
   "licenses": [
     {
