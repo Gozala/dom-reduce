@@ -12,7 +12,7 @@ structures in composable manner.
 var open = require("dom-reduce/event")
 var map = require("reducers/map")
 var filter = require("reducers/filter")
-var reduce = require("reducers/reduce")
+var fold = require("reducers/fold")
 var takeWhile = require("reducers/take-while")
 
 // Take stream of mouse move events.
@@ -34,9 +34,8 @@ var values = takeWhile(lineAxis, function(value) {
 })
 
 // Drow sowething in the given range.
-reduce(lineAxis, function(previous, position) {
+fold(lineAxis, function(position) {
   draw(position)
-  return position
 })
 ```
 

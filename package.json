@@ -1,12 +1,19 @@
 {
   "name": "dom-reduce",
   "id": "dom-reduce",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Reducible DOM APIs",
   "keywords": [
     "dom",
     "reduce",
-    "reducers"
+    "reducers",
+    "reducible",
+    "stream",
+    "FRP",
+    "functional",
+    "reactive",
+    "signal",
+    "event"
   ],
   "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
   "homepage": "https://github.com/Gozala/dom-reduce",
